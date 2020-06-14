@@ -20,7 +20,7 @@ public class Main {
 
         while (!gameOver) {
             //System.out.println(chessGame.getBoard().toString());
-            chessGame.getBoard().pokaPole();
+            chessGame.getBoard().show();
             System.out.println(currentPlayer + " move");
             System.out.println("" +
                     "Press q to exit \n" +

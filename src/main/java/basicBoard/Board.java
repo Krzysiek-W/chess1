@@ -50,7 +50,7 @@ public class Board {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Twój ruch: \n");
         String move = scanner.nextLine();
-        String [] moves = move.split(" ",2);
+        String[] moves = move.split(" ", 2);
         Pattern compiledMatcher = Pattern.compile("[A-H][1-8]");
         Matcher matcher = compiledMatcher.matcher(moves[0]);
         Matcher matcher1 = compiledMatcher.matcher(moves[1]);

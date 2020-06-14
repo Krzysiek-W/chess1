@@ -22,7 +22,7 @@ public class Board {
         board[coords.getVerticalPositionOnBoard()][coords.getHorizontalPositionOnBoard()] = null;
     }
 
-    public ChessPieces getPieceFromBoard(Coordinates coords){
+    public ChessPieces getPieceFromBoard(Coordinates coords) {
         return board[coords.getVerticalPositionOnBoard()][coords.getHorizontalPositionOnBoard()];
     }
 
@@ -61,7 +61,7 @@ public class Board {
         return printBoard;
     }
 
-    public void pokaPole() {
+    public void show() {
 //        String printBoard = "\n  0  1  2  3  4  5  6  7 \n";
 //        for (int vertical = 0; vertical < 8; vertical++) {
 //            printBoard += vertical;
