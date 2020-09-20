@@ -1,4 +1,4 @@
-package basicBoard;
+package chessTextGame;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
