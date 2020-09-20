@@ -1,8 +1,10 @@
-import board.Board;
-import board.InicialingGame;
-import chessPieces.ChessPieces;
-import chessPieces.King;
-import board.Coordinates;
+package chessObjectGame;
+
+import chessObjectGame.board.Board;
+import chessObjectGame.board.InicialingGame;
+import chessObjectGame.chessPieces.ChessPieces;
+import chessObjectGame.chessPieces.King;
+import chessObjectGame.board.Coordinates;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package board;
+package chessObjectGame.board;
 
-import chessPieces.ChessPieces;
+import chessObjectGame.chessPieces.ChessPieces;
 
 
 import java.util.logging.Logger;
@@ -66,8 +66,8 @@ public class Board {
 //        for (int vertical = 0; vertical < 8; vertical++) {
 //            printBoard += vertical;
 //            for (int horizontal = 0; horizontal < 8; horizontal++) {
-//                if (board[horizontal][vertical] != null) {
-//                    printBoard += " " + board[horizontal][vertical].getMark();
+//                if (chessObjectGame.board[horizontal][vertical] != null) {
+//                    printBoard += " " + chessObjectGame.board[horizontal][vertical].getMark();
 //                } else {
 //                    printBoard += " - ";
 //                }
