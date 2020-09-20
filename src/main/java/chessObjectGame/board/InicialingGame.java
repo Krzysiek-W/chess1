@@ -1,6 +1,6 @@
-package board;
+package chessObjectGame.board;
 
-import chessPieces.*;
+import chessObjectGame.chessPieces.*;
 
 public class InicialingGame {
 

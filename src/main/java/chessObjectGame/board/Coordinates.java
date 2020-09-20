@@ -1,4 +1,4 @@
-package board;
+package chessObjectGame.board;
 
 public class Coordinates {
     int horizontalPositionOnBoard;

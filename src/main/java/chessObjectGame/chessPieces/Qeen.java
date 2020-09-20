@@ -1,7 +1,7 @@
-package chessPieces;
+package chessObjectGame.chessPieces;
 
-import board.InicialingGame;
-import board.Coordinates;
+import chessObjectGame.board.InicialingGame;
+import chessObjectGame.board.Coordinates;
 
 public class Qeen extends ChessPieces {
 

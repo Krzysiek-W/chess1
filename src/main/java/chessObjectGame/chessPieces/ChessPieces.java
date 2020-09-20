@@ -1,9 +1,9 @@
-package chessPieces;
+package chessObjectGame.chessPieces;
 
 
-import board.Board;
-import board.InicialingGame;
-import board.Coordinates;
+import chessObjectGame.board.Board;
+import chessObjectGame.board.InicialingGame;
+import chessObjectGame.board.Coordinates;
 
 public abstract class ChessPieces {
     protected String mark;
