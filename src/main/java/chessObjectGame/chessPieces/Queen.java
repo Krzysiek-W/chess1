@@ -1,12 +1,11 @@
 package chessObjectGame.chessPieces;
 
-import chessObjectGame.board.InicialingGame;
+import chessObjectGame.board.InitializingGame;
 import chessObjectGame.board.Coordinates;
 
-public class Qeen extends ChessPieces {
+public class Queen extends ChessPieces {
 
-
-    public Qeen(String color, Coordinates initCoords, InicialingGame game) {
+    public Queen(String color, Coordinates initCoords, InitializingGame game) {
         super(color, initCoords, game);
         mark = color.equals("white") ? "wQ" : "bQ";
     }

@@ -2,19 +2,23 @@ package chessObjectGame.board;
 
 import chessObjectGame.chessPieces.*;
 
-public class InicialingGame {
+/**
+ * @here I initializing {@Board} with all Pieces
+ */
+public class InitializingGame {
+    private final Board board;
 
-    private Board board;
-
-
-    public InicialingGame() {
+    //TODO: spróbować zrobić wątki dla setUpPiecesOfBoard
+    public InitializingGame() {
         board = new Board();
-        setUpPiecesOfBoard("white");
-        setUpPiecesOfBoard("black");
+        Thread thread1 = new Thread(() -> setUpPiecesOfBoard("white"));
+        Thread thread2 = new Thread(() -> setUpPiecesOfBoard("black"));
+
+        thread1.start();
+        thread2.start();
     }
 
     private void setUpPiecesOfBoard(String color) {
-
         int one = (color.equals("black")) ? -1 : 1;
         int side = (color.equals("white")) ? 0 : 7;
         int coordsIncrement = 0;
@@ -32,19 +36,16 @@ public class InicialingGame {
         coordsIncrement++;
 
         if (color.equals("white")) {
-            ChessPieces q = new Qeen(color, new Coordinates(side, coordsIncrement), this);
+            ChessPieces q = new Queen(color, new Coordinates(side, coordsIncrement), this);
             coordsIncrement++;
             ChessPieces k = new King(color, new Coordinates(side, coordsIncrement), this);
         } else {
             ChessPieces k = new King(color, new Coordinates(side, coordsIncrement), this);
             coordsIncrement++;
-            ChessPieces q = new Qeen(color, new Coordinates(side, coordsIncrement), this);
-
+            ChessPieces q = new Queen(color, new Coordinates(side, coordsIncrement), this);
         }
-
         for (int i = 0; i < 8; i++) {
             Pawn p = new Pawn(color, new Coordinates(side + one, i), this);
-
         }
     }
 
