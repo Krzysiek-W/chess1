@@ -24,15 +24,21 @@ public abstract class ChessPieces {
 
     public boolean moveTo(Coordinates newCoords) {
         Board board = gameInit.getBoard();
-        ChessPieces oldPiece = board.getPieceFromBoard(newCoords);
+        ChessPieces newFieldForPiece = board.getPieceFromBoard(newCoords);
 
-        if (oldPiece == null ||
-                !oldPiece.getMark().equals(mark)) {
-
+        if (basicRule(newFieldForPiece) && moveValidation(coordinates, newCoords)) {
             board.putPieceAtCell(this, newCoords);
             return true;
         }
         return false;
+    }
+
+    public boolean moveValidation(Coordinates coordinates, Coordinates newCoords) {
+        return true;
+    }
+
+    private boolean basicRule(ChessPieces chessPieces) {
+        return chessPieces == null || !chessPieces.getColor().equals(color);
     }
 }
 

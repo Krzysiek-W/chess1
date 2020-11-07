@@ -95,6 +95,7 @@ public class Main {
         }
     }
 
+    //TODO Maybe enum?
     private static String convertHorizontalPosition(String letterPosition) {
         Map<String, String> letterArray = new HashMap<String, String>();
         letterArray.put("A", "0");

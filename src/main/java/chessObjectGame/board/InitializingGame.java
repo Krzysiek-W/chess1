@@ -11,11 +11,8 @@ public class InitializingGame {
     //TODO: spróbować zrobić wątki dla setUpPiecesOfBoard
     public InitializingGame() {
         board = new Board();
-        Thread thread1 = new Thread(() -> setUpPiecesOfBoard("white"));
-        Thread thread2 = new Thread(() -> setUpPiecesOfBoard("black"));
-
-        thread1.start();
-        thread2.start();
+        setUpPiecesOfBoard("white");
+        setUpPiecesOfBoard("black");
     }
 
     private void setUpPiecesOfBoard(String color) {

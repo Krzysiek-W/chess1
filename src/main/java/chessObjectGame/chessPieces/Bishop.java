@@ -9,5 +9,4 @@ public class Bishop extends ChessPieces {
         super(color, initCoords, game);
         mark = color.equals("white") ? "wB" : "bB";
     }
-
 }

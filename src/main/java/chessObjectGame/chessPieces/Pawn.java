@@ -9,4 +9,10 @@ public class Pawn extends ChessPieces {
         super(color, initCoords, game);
         mark = color.equals("white") ? "wP" : "bP";
     }
+
+    @Override
+    public boolean moveValidation(Coordinates coordinates, Coordinates newCoords) {
+        int i = color.equalsIgnoreCase("white") ? 1 : -1;
+        return coordinates.getHorizontalPositionOnBoard() + i == newCoords.getHorizontalPositionOnBoard();
+    }
 }
