@@ -2,9 +2,6 @@ package chessObjectGame.board;
 
 import chessObjectGame.chessPieces.ChessPieces;
 
-
-import java.util.logging.Logger;
-
 public class Board {
     ChessPieces[][] board;
 

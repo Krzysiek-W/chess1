@@ -2,9 +2,6 @@ package chessObjectGame.board;
 
 import chessObjectGame.chessPieces.*;
 
-/**
- * @here I initializing {@Board} with all Pieces
- */
 public class InitializingGame {
     private final Board board;
 
@@ -16,8 +13,8 @@ public class InitializingGame {
     }
 
     private void setUpPiecesOfBoard(String color) {
-        int one = (color.equals("black")) ? -1 : 1;
-        int side = (color.equals("white")) ? 0 : 7;
+        int one = ("black".equals(color)) ? -1 : 1;
+        int side = ("white".equals(color)) ? 0 : 7;
         int coordsIncrement = 0;
 
         ChessPieces r1 = new Rock(color, new Coordinates(side, coordsIncrement), this);

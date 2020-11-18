@@ -6,14 +6,15 @@ import chessObjectGame.chessPieces.ChessPieces;
 import chessObjectGame.chessPieces.King;
 import chessObjectGame.board.Coordinates;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
+
+import static chessObjectGame.board.Coordinates.createCoordinates;
 
 public class Main {
     public static void main(String[] args) {
-        InitializingGame chessGame = new InitializingGame();
         boolean gameOver = false;
+        InitializingGame chessGame = new InitializingGame();
+
         String currentPlayer = "white";
         Scanner scanner = new Scanner(System.in);
         String input;
@@ -49,25 +50,12 @@ public class Main {
         }
     }
 
-    private static Coordinates createCoordinates(String input) {
-        try {
-            int vertical = Integer.parseInt(convertHorizontalPosition(input.split("")[0].trim()));
-            int horizontal = Integer.parseInt(input.split("")[1].trim()) - 1;
-            return new Coordinates(horizontal, vertical);
-        } catch (NumberFormatException e) {
-            System.out.println("Bad command, use format eg. 'A1' ");
-            Scanner scanner = new Scanner(System.in);
-            return createCoordinates(scanner.nextLine());
-        }
-    }
-
     private static Coordinates getNewLocation() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Move to coords xy");
         String input = scanner.nextLine();
-        Coordinates newCoords = createCoordinates(input);
-        return newCoords;
+        return createCoordinates(input);
     }
 
     private static ChessPieces getCurrentPiece(InitializingGame game, String color) {
@@ -90,23 +78,8 @@ public class Main {
             } else if (currentPiece.getColor().equalsIgnoreCase(color)) {
                 return currentPiece;
             } else {
-                System.out.println("Not your piece.");
+                System.out.println("This is not your piece! Can't touch this :)");
             }
         }
-    }
-
-    //TODO Maybe enum?
-    private static String convertHorizontalPosition(String letterPosition) {
-        Map<String, String> letterArray = new HashMap<String, String>();
-        letterArray.put("A", "0");
-        letterArray.put("B", "1");
-        letterArray.put("C", "2");
-        letterArray.put("D", "3");
-        letterArray.put("E", "4");
-        letterArray.put("F", "5");
-        letterArray.put("G", "6");
-        letterArray.put("H", "7");
-
-        return letterArray.getOrDefault(letterPosition, "9");
     }
 }
